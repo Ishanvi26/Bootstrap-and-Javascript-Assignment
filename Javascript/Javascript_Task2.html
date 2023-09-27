@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 2 - Ishanvi Kotha</title>
+</head>
+
+<body>
+    <h1>Javascript Task 2</h1>
+    <h3>Question - Write a JavaScript function that returns a passed string with letters in
+        alphabetical order.</h3>
+    <h3>Answer - </h3>
+    <p>The string 'webmaster' in alphabetical order is <span id="output"><span id="sortedString"></span></span></p>
+    <script>
+        function sortStringAlphabetically(inputString) {
+            const charArray = inputString.split('');
+            const sortedArray = charArray.sort();
+            const sortedString = sortedArray.join('');
+
+            return sortedString;
+        }
+
+        const inputString = 'webmaster';
+        const sortedResult = sortStringAlphabetically(inputString);
+        
+        // Update the content of the 'output' span with the sorted string
+        document.getElementById('output').textContent = sortedResult;
+        document.getElementById('sortedString').textContent = sortedResult;
+    </script>
+</body>
+
+</html>

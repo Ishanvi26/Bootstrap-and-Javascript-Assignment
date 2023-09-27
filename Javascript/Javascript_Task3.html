@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 3 - Ishanvi Kotha</title>
+</head>
+
+<body>
+    <label for="num1">1st Number :</label>
+    <input type="number" id="num1"><br><br>
+
+    <label for="num2">2nd Number :</label>
+    <input type="number" id="num2"><br><br>
+
+    <button id="multiplyBtn">Multiply</button>
+    <button id="divideBtn">Divide</button><br><br>
+
+    <div id="result"></div>
+
+    <script>
+        
+        const num1Input = document.getElementById("num1");
+        const num2Input = document.getElementById("num2");
+        const multiplyBtn = document.getElementById("multiplyBtn");
+        const divideBtn = document.getElementById("divideBtn");
+        const resultDiv = document.getElementById("result");
+
+        
+        multiplyBtn.addEventListener("click", function () {
+            
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                resultDiv.textContent = "Please enter valid numbers.";
+            } else {
+                
+                const product = num1 * num2;
+                resultDiv.textContent = `The Result Is: \n ${product}`;
+            }
+        });
+
+        divideBtn.addEventListener("click", function () {
+            // Get the values from the input fields
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+
+            // Check if the inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                resultDiv.textContent = "Please enter valid numbers.";
+            } else {
+                // Check if the divisor is not zero
+                if (num2 === 0) {
+                    resultDiv.textContent = "Division by zero is not allowed.";
+                } else {
+                    // Perform division and display the result
+                    const quotient = num1 / num2;
+                    resultDiv.textContent = `The Result Is: \n ${quotient}`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

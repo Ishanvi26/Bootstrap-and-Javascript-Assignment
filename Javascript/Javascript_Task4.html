@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 4 - Ishanvi Kotha</title>
+</head>
+<body>
+    <button id="showDateBtn">Show Date</button>
+    <div id="dateResult"></div><br><br>
+
+    <button id="showTimeBtn">Show Time</button>
+    <div id="timeResult"></div><br><br>
+
+    <script>
+        
+        const showDateBtn = document.getElementById("showDateBtn");
+        const showTimeBtn = document.getElementById("showTimeBtn");
+        const dateResultDiv = document.getElementById("dateResult");
+        const timeResultDiv = document.getElementById("timeResult");
+
+        showDateBtn.addEventListener("click", function () {
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            const month = currentDate.toLocaleString('default', { month: 'long' });
+            const year = currentDate.getFullYear();
+            dateResultDiv.textContent = `${day}/${month}/${year}`;
+        });
+
+        showTimeBtn.addEventListener("click", function () {
+            const currentTime = new Date();
+            timeResultDiv.textContent = `${currentTime}`;
+        });
+    </script>
+</body>
+</html>

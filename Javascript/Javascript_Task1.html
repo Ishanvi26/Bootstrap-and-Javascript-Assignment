@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 1 - Ishanvi Kotha</title>
+</head>
+
+<body>
+    <h1>Javascript Task 1</h1>
+    <h3>Question - Write JavaScript code to find the reverse of a number</h3>
+    <h3>Answer - </h3>
+    <p>Reverse of the number 32243 is <span id="output"><span id="reversedNumber"></span></span></p>
+    <script>
+        function reverseNumber(x) {
+            let numStr = x.toString();
+            let reversedStr = numStr.split('').reverse().join('');
+            let reversedNum = parseInt(reversedStr, 10);
+            return reversedNum;
+        }
+
+        let x = 32243;
+        let reversedX = reverseNumber(x);
+
+        document.getElementById('output').textContent = reversedX;
+        document.getElementById('reversedNumber').textContent = reversedX;
+    </script>
+</body>
+
+</html>
